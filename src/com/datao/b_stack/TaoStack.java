@@ -16,14 +16,14 @@ package com.datao.b_stack;
 public interface TaoStack<E> {
 
     /**
-     * 添加元素
+     * 入栈
      *
      * @param e
      */
     void push(E e);
 
     /**
-     * 取出元素
+     * 出栈
      *
      * @return
      */

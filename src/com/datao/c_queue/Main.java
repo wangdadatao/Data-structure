@@ -1,12 +1,14 @@
 package com.datao.c_queue;
 
+import com.datao.d_linked.TaoLinkedListQueue;
+
 public class Main {
     public static void main(String[] args) {
         //testArrayQueue();
         //testLoopQueue();
 
         //测试数组队列与循环队列的性能；
-        int count = 10000;
+        int count = 100000;
         TaoArrayQueue<Integer> arrayQueue = new TaoArrayQueue<>();
         double time1 = testQueue(arrayQueue, count);
         System.out.println("数组队列耗时:" + time1);
@@ -14,6 +16,10 @@ public class Main {
         TaoLoopQueue<Integer> loopQueue = new TaoLoopQueue<>();
         double time2 = testQueue(loopQueue, count);
         System.out.println("循环队列耗时:" + time2);
+
+        TaoLinkedListQueue<Integer> linkedListQueue = new TaoLinkedListQueue<>();
+        double time3 = testQueue(linkedListQueue, count);
+        System.out.println("链表队列耗时：" + time3);
 
     }
 
