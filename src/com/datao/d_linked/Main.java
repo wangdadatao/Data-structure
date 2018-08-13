@@ -17,8 +17,42 @@ public class Main {
         double time2 = testStack(taoLinkedListStack, count);
         System.out.println("链表栈耗时:" + time2);*/
 
-        testTaoLinkedListQueue();
+        //testTaoLinkedListQueue();
 
+        //testTaoDoubleLinkedList();
+
+
+        TaoCircularLinkedList<Integer> list = new TaoCircularLinkedList<>();
+        for (int i = 0; i < 20; i++) {
+            if (i % 5 == 0) {
+                list.addFirst(i);
+            } else {
+                list.add(i, i);
+            }
+
+            if ((i + 1) % 7 == 0) {
+                list.set(i, 666);
+            }
+
+            System.out.println(list.toString() + " -- " + list.getSize());
+        }
+
+        list.removeIndex(0);
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.removeIndex(10);
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.removeFirst();
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.removeLast();
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.remove(11);
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        System.out.println(list.getSize());
     }
 
     /**
@@ -97,5 +131,32 @@ public class Main {
             }
             System.out.println(queue.toString());
         }
+    }
+
+    private static void testTaoDoubleLinkedList() {
+        TaoDoubluLinkedList<Integer> list = new TaoDoubluLinkedList<>();
+        list.add(0);
+        for (int i = 1; i < 20; i++) {
+            if (i % 5 == 0) {
+                list.addFirst(i);
+            } else {
+                list.add(i);
+            }
+
+            if (list.get(i) % 8 == 0) {
+                list.set(i, -1);
+            }
+
+            System.out.println(list.toString() + " -- " + list.indexOf(i) + " -- " + list.contains(i - 4) + " -- size:" + list.getSize());
+        }
+
+        list.removeFirst();
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.remove(10);
+        System.out.println(list.toString() + " -- size:" + list.getSize());
+
+        list.removeLast();
+        System.out.println(list.toString() + " -- size:" + list.getSize());
     }
 }

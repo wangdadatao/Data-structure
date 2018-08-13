@@ -1,5 +1,10 @@
 package com.datao.d_linked;
 
+/**
+ * 单向链表
+ *
+ * @author datao
+ */
 public class TaoLinkedList<E> {
 
     /**

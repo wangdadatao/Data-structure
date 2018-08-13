@@ -12,6 +12,7 @@ public class Solution {
 
         //node = removeElements(node, 3);
         //node = removeElements2(node, 3);
+        node = removeElements3(node, 3);
         System.out.println(node);
     }
 
