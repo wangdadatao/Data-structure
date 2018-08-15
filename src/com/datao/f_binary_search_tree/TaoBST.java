@@ -40,7 +40,7 @@ public class TaoBST<E extends Comparable<E>> {
     }
 
     /**
-     * 向以Node为根节点的热分搜索树插入元素e
+     * 向以Node为根节点的二分搜索树插入元素e
      * <p>
      * 递归算法
      *
@@ -91,7 +91,7 @@ public class TaoBST<E extends Comparable<E>> {
         //判断条件中大于或等于0的回加入到右子树，所以可以包含重复元素
         if (e.compareTo(node.e) < 0) {
             node.left = add2(node.left, e);
-        } else {
+        } else if(e.compareTo(node.e) > 0) {
             node.right = add2(node.right, e);
         }
 
@@ -356,7 +356,6 @@ public class TaoBST<E extends Comparable<E>> {
      */
     public void remove(E e) {
         root = remove(root, e);
-
     }
 
     private Node remove(Node node, E e) {

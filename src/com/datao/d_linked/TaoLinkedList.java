@@ -250,6 +250,32 @@ public class TaoLinkedList<E> {
         return result;
     }
 
+    /**
+     * 删除链表中指定的元素
+     * <p>
+     * 只删除查找到的第一个元素
+     *
+     * @param e
+     */
+    public void removeElement(E e) {
+        if (size == 0) {
+            throw new IllegalArgumentException("List Is Empty !");
+        }
+
+        Node prev = dummyHead;
+        for (int i = 0; i < size; i++) {
+            Node cur = prev.next;
+            if (cur.e.equals(e)) {
+                prev.next = cur.next;
+                cur.next = null;
+                size--;
+                return;
+            }
+            prev = prev.next;
+        }
+
+    }
+
     private class Node {
         public E e;
         public Node next;
