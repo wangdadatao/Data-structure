@@ -20,6 +20,19 @@ public class TaoArray<E> {
     }
 
     /**
+     * 构造函数
+     *
+     * @param arr 传入数组的默认容量
+     */
+    public TaoArray(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = arr[i];
+        }
+        size = data.length;
+    }
+
+    /**
      * 默认长度为10
      */
     public TaoArray() {
@@ -255,5 +268,20 @@ public class TaoArray<E> {
 
     public E getFirst() {
         return get(0);
+    }
+
+    /**
+     * 交换两个索引的元素
+     *
+     * @param i
+     * @param j
+     */
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal");
+        }
+        E e = data[i];
+        data[i] = data[j];
+        data[j] = e;
     }
 }
