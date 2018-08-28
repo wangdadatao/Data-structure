@@ -3,7 +3,7 @@ package com.datao.a_array;
 /**
  * @author datao
  */
-public class TaoArray<E> {
+public class TaoArray<E extends  Comparable<E>> {
 
     private E[] data;
 
