@@ -2,7 +2,7 @@ package com.datao.b_stack;
 
 import com.datao.a_array.TaoArray;
 
-public class TaoArrayStack<E> implements TaoStack<E> {
+public class TaoArrayStack<E extends Comparable<E>> implements TaoStack<E> {
 
     private TaoArray<E> array;
 

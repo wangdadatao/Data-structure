@@ -7,7 +7,7 @@ import com.datao.a_array.TaoArray;
  *
  * @author datao
  */
-public class TaoArrayQueue<E> implements TaoQueue<E> {
+public class TaoArrayQueue<E extends  Comparable<E>> implements TaoQueue<E> {
 
     private TaoArray<E> data;
 
