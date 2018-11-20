@@ -23,8 +23,6 @@ public class BubbleSort {
         for (int i : nums) {
             System.out.println(i);
         }
-
-
     }
 
 }
