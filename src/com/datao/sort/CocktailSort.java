@@ -35,7 +35,6 @@ public class CocktailSort {
                 }
             }
             left++;
-            System.out.println(-999);
         }
 
         for (Integer i : nums) {
